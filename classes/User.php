@@ -4,6 +4,8 @@ class User
 {
   protected $name;
   protected $lastName;
+  protected $eta;
+  private $sconto = 0;
 
   public function __construct($name, $lastName)
   {
@@ -37,6 +39,14 @@ class User
   {
     return $this->name . ' ' . $this->lastName;
   }
+
+  public function setSconto($eta)
+  {
+    $this->eta = $eta;
+    if ($eta > 60) {
+      $this->sconto = 20;
+    }
+  }
 }
 
 // $user = new User();
@@ -52,5 +62,5 @@ class User
 // var_dump($user->getFullName());
 // var_dump($user->getName());
 
-$user = new User('Chiara', 'Passaro');
-echo $user->getName();
+// $user = new User('Chiara', 'Passaro');
+// echo $user->getName();

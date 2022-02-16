@@ -1,7 +1,8 @@
 <?php
-
+require_once __DIR__ . "/../traits/Position.php";
 class Car
 {
+  use Position;
   public $model;
   public $brand;
   public $color;
